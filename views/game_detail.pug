@@ -1,0 +1,54 @@
+extends layout
+
+block content
+
+  h1 GameId: #{game.gameId}
+   
+  div(id="gameArea")
+  
+  script(id="create-game-template" type="text/template").
+    <div class="createGameWrapper">
+      <div class="info">Open this site on your mobile device:</div>
+      <div id="gameURL" class="infoBig">Error!</div>
+
+      <div class="info">Then click <strong>JOIN</strong> and <br/> enter the following Game ID:</div>
+      <div id="spanNewGameCode" class="gameId">#{game.gameId}</div>
+
+      <div id="playersWaiting"></div>
+    </div>
+
+  script(id="join-game-template" type="text/template").
+    <div class="joinGameWrapper">
+      <div class="info">
+          <label for="inputPlayerName">Your Name:</label>
+          <input id="inputPlayerName" type="text" />
+      </div>
+
+      <div class="info">
+          <label for="inputGameId">Game ID:</label>
+          <input id="inputGameId" type="text"/>
+      </div>
+
+      <div class="info buttons">
+          <button id="btnStart" class="btn">Start</button>
+          <div id="playerWaitingMessage"></div>
+      </div>
+    </div>
+
+  script(id="host-game-template" type="text/template").
+    <div id="wordArea">
+        <div id="hostWord">5</div>
+    </div>
+    <div id="playerScores">
+
+    </div>
+
+  script(id="leaderboard-template" type="text/template").
+    <div id="banner">Leader Board</div>
+        <hr>
+
+
+  script(src="libs/textFit.min.js")
+  script(src="libs/fastclick.js")
+  script(src="/socket.io/socket.io.js")
+  script(src="/appQuiz.js")

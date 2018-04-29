@@ -27,6 +27,7 @@ exports.index = function(req, res) {
             Genre.count(callback);
         },
     }, function(err, results) {
+        console.log("bookcontroller result")
         res.render('index', { title: 'Local Library Home', error: err, data: results });
     });
 };
