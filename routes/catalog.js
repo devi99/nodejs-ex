@@ -9,7 +9,7 @@ var genre_controller = require('../controllers/genreController');
 var book_instance_controller = require('../controllers/bookinstanceController');
 
 /// BOOK ROUTES ///
-console.log("catalog route")
+
 // GET catalog home page.
 router.get('/', book_controller.index);  
 
